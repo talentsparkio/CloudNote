@@ -1,25 +1,89 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8173.3" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9VG-75-Rsq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8142"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Note Table View Controller-->
+        <scene sceneID="aM8-S4-MBF">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <tableViewController id="9VG-75-Rsq" customClass="NoteTableViewController" customModule="CloudNote" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="68" sectionHeaderHeight="28" sectionFooterHeight="28" id="G0q-cI-I4K">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoteCell" rowHeight="68" id="Lra-Qd-nVB" customClass="NoteCell" customModule="CloudNote" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="68"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Lra-Qd-nVB" id="Pz2-TY-Rrf">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="67.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bvW-9J-l9k">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-Nb-gR5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="64" id="Gba-YQ-UXZ"/>
+                                                        <constraint firstAttribute="width" constant="64" id="gNO-rP-Kty"/>
+                                                        <constraint firstAttribute="width" secondItem="qe2-Nb-gR5" secondAttribute="height" multiplier="1:1" id="keX-vC-Dgx"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Efa-Ua-UoB">
+                                                    <rect key="frame" x="74" y="0.0" width="526" height="38"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMK-YW-YGl">
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="19.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Body" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-iy-hGE">
+                                                            <rect key="frame" x="0.0" y="24" width="55.5" height="13.5"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
+                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="gt6-iy-hGE" firstAttribute="leading" secondItem="Efa-Ua-UoB" secondAttribute="leading" id="Fyt-pQ-W2p"/>
+                                                        <constraint firstItem="bMK-YW-YGl" firstAttribute="leading" secondItem="Efa-Ua-UoB" secondAttribute="leading" id="Wse-LK-02e"/>
+                                                    </constraints>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="bvW-9J-l9k" firstAttribute="top" secondItem="Pz2-TY-Rrf" secondAttribute="top" id="XXa-Hn-Coa"/>
+                                        <constraint firstItem="bvW-9J-l9k" firstAttribute="leading" secondItem="Pz2-TY-Rrf" secondAttribute="leading" id="fsh-kt-ZhF"/>
+                                        <constraint firstAttribute="trailing" secondItem="bvW-9J-l9k" secondAttribute="trailing" id="nOT-9i-Xke"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="height" secondItem="qe2-Nb-gR5" secondAttribute="height" id="StI-98-Wxg"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="noteBody" destination="gt6-iy-hGE" id="cEm-cj-0pO"/>
+                                    <outlet property="notePhoto" destination="qe2-Nb-gR5" id="Kq5-3j-FvV"/>
+                                    <outlet property="noteTitle" destination="bMK-YW-YGl" id="dJZ-sY-ns3"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9VG-75-Rsq" id="1mG-Mc-ZIR"/>
+                            <outlet property="delegate" destination="9VG-75-Rsq" id="uz2-9j-YwR"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SoO-Zs-cmR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="762" y="553"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="empty" width="400" height="400"/>
+    </resources>
 </document>

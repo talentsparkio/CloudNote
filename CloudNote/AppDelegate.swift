@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // TODO: You need to enter your own appId and clientKey
-        Parse.setApplicationId("...", clientKey: "...")
+        Parse.setApplicationId("DnAVErSXLQs1XHiPjm5tafWHstTF31YpPd8MaTAK", clientKey: "QCRGgMt573gTUKHUODBpMaUXenvpzVUZsCNSoZLK")
         
         return true
     }
