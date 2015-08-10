@@ -75,16 +75,47 @@ class NoteTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowDetail" {
+            let noteViewController = segue.destinationViewController as! NoteViewController
+            
+            // Get the cell that generated this segue.
+            if let selectedNoteCell = sender as? NoteCell {
+                let indexPath = tableView.indexPathForCell(selectedNoteCell)!
+                let selectedNote = notes[indexPath.row]
+                noteViewController.note = selectedNote
+            }
+        }
+        else if segue.identifier == "AddItem" {
+            print("Adding new note.")
+        }
     }
-    */
     
+    @IBAction func unwindToNoteList(sender: UIStoryboardSegue) {
+        if let noteViewController = sender.sourceViewController as? NoteViewController, note = noteViewController.note {
+            if let selectedIndexPath = tableView.indexPathForSelectedRow {
+                // Update an existing note.
+                notes[selectedIndexPath.row] = note
+                tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
+            } else {
+            }
+            
+            // Save the modified note
+            // https://www.parse.com/docs/ios/guide#objects-saving-objects
+            note.saveInBackgroundWithBlock {
+                (success, error) -> Void in
+                if (success) {
+                    // The object has been saved.
+                } else {
+                    // There was a problem, check error.description
+                }
+            }
+        }
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
