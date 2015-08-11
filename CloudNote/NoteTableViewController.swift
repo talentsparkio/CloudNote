@@ -90,7 +90,7 @@ class NoteTableViewController: UITableViewController {
                 noteViewController.note = selectedNote
             }
         }
-        else if segue.identifier == "AddItem" {
+        else if segue.identifier == "AddNote" {
             print("Adding new note.")
         }
     }
@@ -102,6 +102,10 @@ class NoteTableViewController: UITableViewController {
                 notes[selectedIndexPath.row] = note
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
             } else {
+                // Add a new note.
+                let newIndexPath = NSIndexPath(forRow: notes.count, inSection: 0)
+                notes.append(note)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
             }
             
             // Save the modified note

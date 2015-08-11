@@ -27,14 +27,24 @@ class NoteViewController: UIViewController, UINavigationControllerDelegate {
     // MARK: - Navigation
     
     @IBAction func cancel(sender: UIBarButtonItem) {
-        navigationController!.popViewControllerAnimated(true)
+        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        
+        if isPresentingInAddMealMode {
+            dismissViewControllerAnimated(true, completion: nil)
+        } else {
+            navigationController!.popViewControllerAnimated(true)
+        }
     }
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let note = note {
             note["Title"] = noteTitle.text
             note["Body"] = noteBody.text
+        } else {
+            let newNote = PFObject(className:"Note")
+            newNote["Title"] = noteTitle.text
+            newNote["Body"] = noteBody.text
+            note = newNote
         }
     
     }

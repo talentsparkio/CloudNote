@@ -79,7 +79,7 @@
                     <navigationItem key="navigationItem" id="5YX-Bo-xLd">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="ZK9-7l-YpQ">
                             <connections>
-                                <segue destination="lOp-Hc-0TF" kind="presentation" id="fbO-cc-bd1"/>
+                                <segue destination="lOp-Hc-0TF" kind="presentation" identifier="AddNote" id="fbO-cc-bd1"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
