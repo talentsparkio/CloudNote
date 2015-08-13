@@ -14,8 +14,16 @@ class NoteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Load data from Parse
+        refreshFromParse()
+    }
+    
+    // MARK: Refreshing
+    @IBAction func refreshData(sender: UIRefreshControl) {
+        refreshFromParse()
+    }
+    
+    func refreshFromParse() {
+        // Load initial data from Parse
         // https://www.parse.com/docs/ios/guide#queries-basic-queries
         let query = PFQuery(className:"Note")
         query.addDescendingOrder("updatedAt")
@@ -27,16 +35,17 @@ class NoteTableViewController: UITableViewController {
                 if let notes = notes as? [PFObject] {
                     self.notes = notes
                     self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-
+        
+        
     }
 
     // MARK: - Table view data source
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
