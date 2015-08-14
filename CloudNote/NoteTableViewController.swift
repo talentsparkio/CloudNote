@@ -53,6 +53,10 @@ class NoteTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return notes.count
     }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 64.0
+    }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell", forIndexPath: indexPath) as! NoteCell
@@ -60,6 +64,15 @@ class NoteTableViewController: UITableViewController {
         let note = notes[indexPath.row]
         cell.noteTitle.text = note["Title"] as? String
         cell.noteBody.text = note["Body"] as? String
+        let image = note["Photo"] as? PFFile
+        image?.getDataInBackgroundWithBlock {(imageData: NSData?, error: NSError?) -> Void in
+            if error == nil {
+                if let imageData = imageData {
+                    cell.notePhoto.image = UIImage(data:imageData)
+                }
+            }
+        }
+
         
         return cell
     }

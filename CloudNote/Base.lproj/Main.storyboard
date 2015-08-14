@@ -23,10 +23,10 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bvW-9J-l9k">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="64.5"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-Nb-gR5">
-                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64"/>
+                                                <imageView autoresizesSubviews="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="64" placeholderIntrinsicHeight="64" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-Nb-gR5">
+                                                    <rect key="frame" x="0.0" y="0.0" width="64" height="64.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="64" id="Gba-YQ-UXZ"/>
                                                         <constraint firstAttribute="width" constant="64" id="gNO-rP-Kty"/>
@@ -34,16 +34,16 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Efa-Ua-UoB">
-                                                    <rect key="frame" x="74" y="0.0" width="526" height="38"/>
+                                                    <rect key="frame" x="74" y="0.0" width="526" height="38.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bMK-YW-YGl">
-                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="19.5"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="74" height="20"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Body" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-iy-hGE">
-                                                            <rect key="frame" x="0.0" y="24.5" width="55.5" height="13.5"/>
+                                                            <rect key="frame" x="0.0" y="25" width="55.5" height="13.5"/>
                                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption1"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -60,7 +60,7 @@
                                     <constraints>
                                         <constraint firstItem="bvW-9J-l9k" firstAttribute="top" secondItem="Pz2-TY-Rrf" secondAttribute="top" id="XXa-Hn-Coa"/>
                                         <constraint firstItem="bvW-9J-l9k" firstAttribute="leading" secondItem="Pz2-TY-Rrf" secondAttribute="leading" id="fsh-kt-ZhF"/>
-                                        <constraint firstAttribute="trailing" secondItem="bvW-9J-l9k" secondAttribute="trailing" id="nOT-9i-Xke"/>
+                                        <constraint firstItem="bvW-9J-l9k" firstAttribute="trailing" secondItem="Pz2-TY-Rrf" secondAttribute="trailing" id="nOT-9i-Xke"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -117,12 +117,17 @@
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="rWM-vS-6Sa">
                                 <rect key="frame" x="20" y="72" width="560" height="128"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="xeN-YG-08c">
+                                    <imageView autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="xeN-YG-08c">
                                         <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                        <gestureRecognizers/>
                                         <constraints>
+                                            <constraint firstAttribute="width" secondItem="xeN-YG-08c" secondAttribute="height" multiplier="1:1" id="B1Q-xe-YgP"/>
                                             <constraint firstAttribute="height" constant="128" id="H2z-yp-aWK"/>
                                             <constraint firstAttribute="width" constant="128" id="a5f-lr-nfY"/>
                                         </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="5sP-Zs-UZ0" appends="YES" id="9LT-AH-ezb"/>
+                                        </connections>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xoi-lI-3lH">
                                         <rect key="frame" x="128" y="49" width="432" height="30"/>
@@ -165,11 +170,18 @@
                     </navigationItem>
                     <connections>
                         <outlet property="noteBody" destination="zaa-jk-3H3" id="Zkx-Dx-7J0"/>
+                        <outlet property="noteImage" destination="xeN-YG-08c" id="hRU-7a-psx"/>
                         <outlet property="noteTitle" destination="xoi-lI-3lH" id="uyI-3i-Qei"/>
+                        <outlet property="saveButton" destination="ssf-0s-CiN" id="YZ6-Qr-Bwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Te0-Ry-lg2" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="uCs-wG-xg6" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="5sP-Zs-UZ0">
+                    <connections>
+                        <action selector="selectImageFromPhotoLibrary:" destination="HbQ-XI-on2" id="k2l-UT-rp6"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="3457" y="553"/>
         </scene>
