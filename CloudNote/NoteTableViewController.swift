@@ -28,7 +28,7 @@ class NoteTableViewController: UITableViewController {
         let query = PFQuery(className:"Note")
         query.addDescendingOrder("updatedAt")
         query.findObjectsInBackgroundWithBlock {
-            (notes: [AnyObject]?, error: NSError?) -> Void in
+            (notes, error) -> Void in
             
             if error == nil {
                 print("Successfully retrieved \(notes!.count) notes.")

@@ -28,7 +28,7 @@ class NoteViewController: UIViewController, UINavigationControllerDelegate, UITe
             noteBody.text = note["Body"] as? String
             
             let image = note["Photo"] as? PFFile
-            image?.getDataInBackgroundWithBlock {(imageData: NSData?, error: NSError?) -> Void in
+            image?.getDataInBackgroundWithBlock {(imageData, error) -> Void in
                 if error == nil {
                     if let imageData = imageData {
                         self.noteImage.image = UIImage(data:imageData)
