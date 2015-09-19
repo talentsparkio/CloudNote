@@ -14,8 +14,10 @@ class NoteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tableView.estimatedRowHeight = 500
+
+        // This line is strictly necessary. Even if the estimate is not completely right, give a good estimate.
+        self.tableView.estimatedRowHeight = 400
+        // This line isn't necessary on iOS 8 and above but I left it here to be more explicit
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
         refreshFromParse()
