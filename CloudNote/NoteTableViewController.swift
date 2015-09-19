@@ -32,7 +32,7 @@ class NoteTableViewController: UITableViewController {
             
             if error == nil {
                 print("Successfully retrieved \(notes!.count) notes.")
-                if let notes = notes as? [PFObject] {
+                if let notes = notes {
                     self.notes = notes
                     self.tableView.reloadData()
                     self.refreshControl?.endRefreshing()
@@ -41,8 +41,6 @@ class NoteTableViewController: UITableViewController {
                 print("Error: \(error!) \(error!.userInfo)")
             }
         }
-        
-        
     }
 
     // MARK: - Table view data source
