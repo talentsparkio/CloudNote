@@ -14,6 +14,10 @@ class NoteTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = 500
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        
         refreshFromParse()
     }
     
@@ -52,26 +56,11 @@ class NoteTableViewController: UITableViewController {
         return notes.count
     }
     
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 64.0
-    }
-
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("NoteCell", forIndexPath: indexPath) as! NoteCell
         
         let note = notes[indexPath.row]
-        cell.noteTitle.text = note["Title"] as? String
-        cell.noteBody.text = note["Body"] as? String
-        let image = note["Photo"] as? PFFile
-        image?.getDataInBackgroundWithBlock {(imageData: NSData?, error: NSError?) -> Void in
-            if error == nil {
-                if let imageData = imageData {
-                    cell.notePhoto.image = UIImage(data:imageData)
-                }
-            }
-        }
-
-        
+        cell.note = note
         return cell
     }
 
@@ -118,9 +107,9 @@ class NoteTableViewController: UITableViewController {
                 tableView.reloadRowsAtIndexPaths([selectedIndexPath], withRowAnimation: .None)
             } else {
                 // Add a new note.
-                let newIndexPath = NSIndexPath(forRow: notes.count, inSection: 0)
-                notes.append(note)
-                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Bottom)
+                let newIndexPath = NSIndexPath(forRow: 0, inSection: 0)
+                notes.insert(note, atIndex: 0)
+                tableView.insertRowsAtIndexPaths([newIndexPath], withRowAnimation: .Top)
             }
             
             // Save the modified note

@@ -47,9 +47,9 @@ class NoteViewController: UIViewController, UINavigationControllerDelegate, UITe
     // MARK: - Navigation
     
     @IBAction func cancel(sender: UIBarButtonItem) {
-        let isPresentingInAddMealMode = presentingViewController is UINavigationController
+        let isPresentingInAddNoteMode = presentingViewController is UINavigationController
         
-        if isPresentingInAddMealMode {
+        if isPresentingInAddNoteMode {
             dismissViewControllerAnimated(true, completion: nil)
         } else {
             navigationController!.popViewControllerAnimated(true)
