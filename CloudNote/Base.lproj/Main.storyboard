@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ajV-a7-9GO">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ajV-a7-9GO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -23,7 +23,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <stackView opaque="NO" contentMode="scaleAspectFit" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Efa-Ua-UoB">
-                                            <rect key="frame" x="0.0" y="8" width="600" height="475.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="475.5"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="400" image="empty" translatesAutoresizingMaskIntoConstraints="NO" id="qe2-Nb-gR5">
                                                     <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
@@ -38,7 +38,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Note Body" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt6-iy-hGE">
-                                                    <rect key="frame" x="0.0" y="452" width="600" height="23"/>
+                                                    <rect key="frame" x="0.0" y="452.5" width="600" height="23"/>
                                                     <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                                     <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -58,7 +58,7 @@
                                         <constraint firstItem="Efa-Ua-UoB" firstAttribute="trailing" secondItem="Pz2-TY-Rrf" secondAttribute="trailing" id="LXE-wm-xsm"/>
                                         <constraint firstItem="Efa-Ua-UoB" firstAttribute="leading" secondItem="Pz2-TY-Rrf" secondAttribute="leading" id="Nsi-y8-VX8"/>
                                         <constraint firstItem="Efa-Ua-UoB" firstAttribute="bottom" secondItem="Pz2-TY-Rrf" secondAttribute="bottomMargin" id="d4r-Cd-EGx"/>
-                                        <constraint firstItem="Efa-Ua-UoB" firstAttribute="top" secondItem="Pz2-TY-Rrf" secondAttribute="topMargin" id="g7V-Vv-5PL"/>
+                                        <constraint firstItem="Efa-Ua-UoB" firstAttribute="top" secondItem="Pz2-TY-Rrf" secondAttribute="top" id="g7V-Vv-5PL"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
@@ -141,13 +141,13 @@
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pEB-iR-C5F">
                                                         <rect key="frame" x="0.0" y="121" width="430" height="14.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Updated At" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oUr-eG-HQa">
                                                         <rect key="frame" x="0.0" y="135" width="430" height="14.5"/>
                                                         <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
-                                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <color key="textColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -157,10 +157,10 @@
                                             <constraint firstItem="lgw-qf-moT" firstAttribute="top" secondItem="OG3-23-vHe" secondAttribute="topMargin" id="tK5-C7-HRt"/>
                                         </constraints>
                                     </stackView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zaa-jk-3H3">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Hello, enter some text here." translatesAutoresizingMaskIntoConstraints="NO" id="zaa-jk-3H3">
                                         <rect key="frame" x="0.0" y="160" width="600" height="376"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.40000000600000002" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
