@@ -39,9 +39,11 @@ class NoteTableViewController: UITableViewController {
             if error == nil {
                 print("Successfully retrieved \(notes!.count) notes.")
                 if let notes = notes {
-                    self.notes = notes
-                    self.tableView.reloadData()
-                    self.refreshControl?.endRefreshing()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.notes = notes
+                        self.tableView.reloadData()
+                        self.refreshControl?.endRefreshing()
+                    }
                 }
             } else {
                 print("Error: \(error!) \(error!.userInfo)")
